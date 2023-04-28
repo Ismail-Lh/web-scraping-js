@@ -1,4 +1,4 @@
-import fs from "fs";
+import fs from "fs/promises";
 
 import { launch } from "puppeteer";
 
@@ -6,12 +6,13 @@ import { launch } from "puppeteer";
 
 const URL_1 = "https://www.traversymedia.com/";
 const URL_2 = "https://byltbasics.com/";
+const URL_3 = "https://learnwebcode.github.io/practice-requests/";
 
 (async () => {
   const browser = await launch();
   const page = await browser.newPage();
 
-  await page.goto(URL_1);
+  await page.goto(URL_2);
 
   // !: Get a screenshot to the website page
   // await page.screenshot({ path: "screenshot.png", fullPage: true });
@@ -53,19 +54,34 @@ const URL_2 = "https://byltbasics.com/";
   //   }))
   // );
 
-  const courses = await page.$$eval("#cscourses .card", (elements) =>
-    elements.map((el) => ({
-      title: el.querySelector(".card-body h3").innerText,
-      level: el.querySelector(".card-body .level").innerText,
-      link: el.querySelector(".card-footer a").href,
-    }))
-  );
+  // const courses = await page.$$eval("#cscourses .card", (elements) =>
+  //   elements.map((el) => ({
+  //     title: el.querySelector(".card-body h3").innerText,
+  //     level: el.querySelector(".card-body .level").innerText,
+  //     link: el.querySelector(".card-footer a").href,
+  //   }))
+  // );
 
-  fs.writeFile("data.json", JSON.stringify(courses), (err) => {
-    if (err) throw new Error(err);
+  // fs.writeFile("data.json", JSON.stringify(courses), (err) => {
+  //   if (err) throw new Error(err);
 
-    console.log("SUCCESS!!!!");
+  //   console.log("SUCCESS!!!!");
+  // });
+
+  const coursesImgs = await page.$$eval("img", (imgs) => {
+    return imgs.map((x) => x.src);
   });
+
+  for (const img of coursesImgs) {
+    const imgPage = await page.goto(img);
+
+    console.log(img.split("/").pop().split("?v=")[0]);
+
+    // await fs.writeFile(
+    //   `images/${img.split("/").pop().split("?v=")[0]}`,
+    //   await imgPage.buffer()
+    // );
+  }
 
   await browser.close();
 })();
