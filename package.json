@@ -1,0 +1,24 @@
+{
+  "name": "web-scraping",
+  "version": "1.0.0",
+  "description": "web scraping",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ismail-Lh/web-scraping-js.git"
+  },
+  "keywords": [],
+  "author": "Ismail Lahbiyeb",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ismail-Lh/web-scraping-js/issues"
+  },
+  "homepage": "https://github.com/Ismail-Lh/web-scraping-js#readme",
+  "dependencies": {
+    "puppeteer": "^19.11.1"
+  }
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "title": "Modern JavaScript From The Beginning 2.0",
+    "level": "ALL LEVELS",
+    "link": "https://traversymedia.com/modern-javascript-2-0"
+  },
+  {
+    "title": "Tailwind CSS From Scratch",
+    "level": "BEGINNER",
+    "link": "https://traversymedia.com/tailwind-css-course"
+  },
+  {
+    "title": "React Front To Back",
+    "level": "BEGINNER - INTERMEDIATE",
+    "link": "https://traversymedia.com/Modern-React-Front-To-Back-Course"
+  },
+  {
+    "title": "50 Projects in 50 Days - HTML, CSS & JavaScript",
+    "level": "ALL LEVELS",
+    "link": "https://traversymedia.com/50-Projects-In-50-Days"
+  },
+  {
+    "title": "Modern HTML & CSS From The Beginning",
+    "level": "BEGINNER",
+    "link": "https://traversymedia.com/modern-html-css-course"
+  },
+  {
+    "title": "Node.js API Masterclass",
+    "level": "INTERMEDIATE",
+    "link": "https://traversymedia.com/node-js-api-masterclass"
+  },
+  {
+    "title": "Next.js Dev To Deployment",
+    "level": "INTERMEDIATE",
+    "link": "https://traversymedia.com/next-js-dev-to-deployment"
+  },
+  {
+    "title": "20 Vanilla JavaScript Projects",
+    "level": "ALL LEVELS",
+    "link": "https://traversymedia.com/20-Vanilla-JavaScript-Projects"
+  },
+  {
+    "title": "Python Django Dev To Deployment",
+    "level": "INTERMEDIATE",
+    "link": "https://traversymedia.com/Python-Django-Dev-To-Deployment"
+  }
+]
