@@ -6,7 +6,6 @@ import { launch } from "puppeteer";
 
 const URL_1 = "https://www.traversymedia.com/";
 const URL_2 = "https://byltbasics.com/";
-const URL_3 = "https://learnwebcode.github.io/practice-requests/";
 
 (async () => {
   const browser = await launch();
@@ -75,12 +74,15 @@ const URL_3 = "https://learnwebcode.github.io/practice-requests/";
   for (const img of coursesImgs) {
     const imgPage = await page.goto(img);
 
-    console.log(img.split("/").pop().split("?v=")[0]);
+    const includeV = img.split("/").pop().includes("?v=");
+    const includesW = img.split("/").pop().includes("?w=");
 
-    // await fs.writeFile(
-    //   `images/${img.split("/").pop().split("?v=")[0]}`,
-    //   await imgPage.buffer()
-    // );
+    let splitBy = includeV ? "?v=" : includesW ? "?w=" : null;
+
+    await fs.writeFile(
+      `images/${img.split("/").pop().split(splitBy)[0]}`,
+      await imgPage.buffer()
+    );
   }
 
   await browser.close();
